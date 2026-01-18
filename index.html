@@ -10,20 +10,21 @@
       color: white;
       text-align: center;
     }
-    #chatBox {
+    #chatBox, #imageBox {
       width: 95%;
-      height: 300px;
       border: 1px solid #334155;
       margin: auto;
       padding: 10px;
       overflow-y: auto;
       border-radius: 8px;
+      min-height: 150px;
     }
     input {
       width: 70%;
       padding: 10px;
       border-radius: 6px;
       border: none;
+      margin-bottom: 5px;
     }
     button {
       padding: 10px;
@@ -31,39 +32,30 @@
       border-radius: 6px;
       background: #22c55e;
       font-size: 16px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
 
-<h2>🤖 Super Power AI Chat</h2>
+  <!-- Chat Section -->
+  <h2>🤖 Super Power AI Chat</h2>
+  <div id="chatBox"></div>
+  <br>
+  <input id="userInput" placeholder="Gujarati / Hindi / English ma lakho..." />
+  <button onclick="sendMsg()">Send</button>
 
-<div id="chatBox"></div>
-<br>
+  <hr>
 
-<input id="userInput" placeholder="Gujarati / Hindi / English ma lakho..." />
-<button onclick="sendMsg()">Send</button>
+  <!-- Image Generator Section -->
+  <h2>🖼️ Super Power AI Image Generator</h2>
+  <input id="imageInput" placeholder="Type description in Gujarati/Hindi/English..." />
+  <button onclick="generateImage()">Generate Image</button>
+  <div id="imageBox"></div>
 
-<script>
-function sendMsg() {
-  let input = document.getElementById("userInput");
-  let chatBox = document.getElementById("chatBox");
-
-  if(input.value === "") return;
-
-  chatBox.innerHTML += "<p><b>You:</b> " + input.value + "</p>";
-  chatBox.innerHTML += "<p><b>AI:</b> Hu tamari madad karva taiyar chhu 🤖</p>";
-
-  input.value = "";
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
-</script>
+  <!-- Scripts -->
+  <script src="chat.js"></script>
+  <script src="image.js"></script>
 
 </body>
 </html>
-<h2>🖼️ Super Power AI Image Generator</h2>
-<input id="imageInput" placeholder="Type description in Gujarati/Hindi/English..." />
-<button onclick="generateImage()">Generate Image</button>
-<div id="imageBox"></div>
-
-<script src="image.js"></script>
