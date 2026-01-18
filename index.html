@@ -2,9 +2,62 @@
 <html>
 <head>
   <title>Super Power AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial;
+      background: #020617;
+      color: white;
+      text-align: center;
+    }
+    #chatBox {
+      width: 95%;
+      height: 300px;
+      border: 1px solid #334155;
+      margin: auto;
+      padding: 10px;
+      overflow-y: auto;
+      border-radius: 8px;
+    }
+    input {
+      width: 70%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #22c55e;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-  <h1>🤖 Super Power AI App</h1>
-  <p>My AI app is coming soon...</p>
+
+<h2>🤖 Super Power AI Chat</h2>
+
+<div id="chatBox"></div>
+<br>
+
+<input id="userInput" placeholder="Gujarati / Hindi / English ma lakho..." />
+<button onclick="sendMsg()">Send</button>
+
+<script>
+function sendMsg() {
+  let input = document.getElementById("userInput");
+  let chatBox = document.getElementById("chatBox");
+
+  if(input.value === "") return;
+
+  chatBox.innerHTML += "<p><b>You:</b> " + input.value + "</p>";
+  chatBox.innerHTML += "<p><b>AI:</b> Hu tamari madad karva taiyar chhu 🤖</p>";
+
+  input.value = "";
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+</script>
+
 </body>
 </html>
