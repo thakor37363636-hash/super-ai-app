@@ -10,7 +10,7 @@
       color: white;
       text-align: center;
     }
-    #chatBox, #imageBox {
+    #chatBox, #imageBox, #voiceBox {
       width: 95%;
       border: 1px solid #334155;
       margin: auto;
@@ -34,6 +34,10 @@
       font-size: 16px;
       margin-bottom: 10px;
     }
+    hr {
+      border: 1px solid #334155;
+      margin: 20px 0;
+    }
   </style>
 </head>
 <body>
@@ -53,9 +57,17 @@
   <button onclick="generateImage()">Generate Image</button>
   <div id="imageBox"></div>
 
+  <hr>
+
+  <!-- Voice AI Section -->
+  <h2>🎤 Super Power AI Voice Chat</h2>
+  <button onclick="startVoice()">Start Talking</button>
+  <div id="voiceBox"></div>
+
   <!-- Scripts -->
   <script src="chat.js"></script>
   <script src="image.js"></script>
+  <script src="voice.js"></script>
 
 </body>
 </html>
